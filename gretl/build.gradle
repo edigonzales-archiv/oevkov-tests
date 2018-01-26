@@ -1,0 +1,37 @@
+import ch.so.agi.gretl.tasks.*
+apply plugin: 'ch.so.agi.gretl'
+
+def targetDbUrl = "jdbc:postgresql://geodb-dev.cgjofbdf5rqg.eu-central-1.rds.amazonaws.com/xanadu2"
+def targetDbUser = "stefan"
+def targetDbPass = System.env.targetDbPass
+
+task importSchema(type: Ili2pgImportSchema){
+    database = [targetDbUrl, targetDbUser, targetDbPass]
+    models = "SO_AVT_OekKov_20180126"
+    modeldir = "http://models.geo.admin.ch;../ili/" 
+    dbschema = "avt_oevkov_test"
+    createFk = true
+    createFkIdx = true
+    createUnique = true
+    createNumChecks = true
+    logFile = "ili2pg.log"
+}
+
+task importGTFS(type: CsvImport) {
+    database = [targetDbUrl, targetDbUser, targetDbPass]
+    dataFile = "/Users/stefan/Downloads/gtfsfp20172017-07-18/stops.txt"
+    schemaName = "avt_oevkov_test"
+	tableName = "stop"
+	firstLineIsHeader=true
+
+
+}
+
+
+task fubar() {
+    description = "aaaa"    
+    doLast {
+        println targetDbPass
+        println "fubar"
+    }
+}

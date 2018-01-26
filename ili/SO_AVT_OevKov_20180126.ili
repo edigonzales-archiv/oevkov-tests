@@ -1,0 +1,22 @@
+INTERLIS 2.3;
+
+!!@ technicalContact=mailto:agi@bd.so.ch
+MODEL SO_AVT_OekKov_20180126 (de)
+AT "http://geo.so.ch/models/AVT"
+VERSION "2018-01-26"  =
+  IMPORTS GeometryCHLV95_V1;
+
+  TOPIC GTFS =
+
+    CLASS stop =
+      stop_id : MANDATORY TEXT*255;
+      stop_name : MANDATORY TEXT*1024;
+      stop_lat : MANDATORY 0.0000000000000 .. 90.0000000000000;
+      stop_lon : MANDATORY 0.0000000000000 .. 180.0000000000000;
+      location_type : 0 .. 2;
+      parent_station : TEXT*255;
+    END stop;
+
+  END GTFS;
+
+END SO_AVT_OekKov_20180126.

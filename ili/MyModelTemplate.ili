@@ -1,0 +1,12 @@
+INTERLIS 2.3;
+
+!!@ technicalContact=mailto:agi@bd.so.ch
+MODEL MyModelTemplate (de)
+AT "http://geo.so.ch/models/AVT"
+VERSION "2018-01-26"  =
+
+  TOPIC MyTopicTemplate =
+
+  END MyTopicTemplate;
+
+END MyModelTemplate.
