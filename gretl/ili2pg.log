@@ -1,10 +1,10 @@
 Info: ili2pg-3.11.1-20171229
 Info: ili2c-4.7.6-20171229
 Info: iox-ili-1.20.1-2c7ee543644f43e2b404e08f5c9d06870f700825
-Info: java.version 1.8.0_131
+Info: java.version 1.8.0_112
 Info: user.name <stefan>
 Info: maxMemory 932352 KB
-Info: currentTime 2018-01-26 17:26:10
+Info: currentTime 2018-01-26 21:24:18
 Info: dbschema <avt_oevkov_test>
 Info: databaseProduct <PostgreSQL>
 Info: databaseVersion <9.6.3>

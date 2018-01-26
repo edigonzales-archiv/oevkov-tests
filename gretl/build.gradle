@@ -10,6 +10,7 @@ task importSchema(type: Ili2pgImportSchema){
     models = "SO_AVT_OekKov_20180126"
     modeldir = "http://models.geo.admin.ch;../ili/" 
     dbschema = "avt_oevkov_test"
+    nameByTopic = true
     createFk = true
     createFkIdx = true
     createUnique = true
@@ -17,21 +18,15 @@ task importSchema(type: Ili2pgImportSchema){
     logFile = "ili2pg.log"
 }
 
+task createGTFSStagingTables(type: SqlExecutor) {
+    database = [targetDbUrl, targetDbUser, targetDbPass]
+    sqlFiles = ["sql/gtfs-staging.sql"]
+}
+
 task importGTFS(type: CsvImport) {
     database = [targetDbUrl, targetDbUser, targetDbPass]
     dataFile = "/Users/stefan/Downloads/gtfsfp20172017-07-18/stops.txt"
     schemaName = "avt_oevkov_test"
-	tableName = "stop"
+	tableName = "gtfs_staging_stop"
 	firstLineIsHeader=true
-
-
-}
-
-
-task fubar() {
-    description = "aaaa"    
-    doLast {
-        println targetDbPass
-        println "fubar"
-    }
 }

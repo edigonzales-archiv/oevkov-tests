@@ -1,0 +1,4 @@
+﻿stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station
+"8000339","Weissenhorn Eschach","48.3010036099201","10.135089480891","",""
+"8000709:0:2","Neckarsulm Mitte","49.1934688770383","9.22294014126908","",""
+"8000778","Asselheim (D)","49.5762169849528","8.16159859923981","",""

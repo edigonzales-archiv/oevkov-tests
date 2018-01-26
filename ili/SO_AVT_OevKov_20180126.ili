@@ -11,10 +11,9 @@ VERSION "2018-01-26"  =
     CLASS stop =
       stop_id : MANDATORY TEXT*255;
       stop_name : MANDATORY TEXT*1024;
-      stop_lat : MANDATORY 0.0000000000000 .. 90.0000000000000;
-      stop_lon : MANDATORY 0.0000000000000 .. 180.0000000000000;
       location_type : 0 .. 2;
       parent_station : TEXT*255;
+      location : MANDATORY GeometryCHLV95_V1.Coord2;
     END stop;
 
   END GTFS;
