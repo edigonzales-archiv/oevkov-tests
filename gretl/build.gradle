@@ -21,6 +21,7 @@ task createNewProject(type: Ili2pgImportSchema) {
     createFkIdx = true
     createUnique = true
     createNumChecks = true
+    createEnumTabs = true
     logFile = "ili2pg.log"
 }
 
