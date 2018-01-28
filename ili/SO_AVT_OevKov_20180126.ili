@@ -8,6 +8,8 @@ VERSION "2018-01-26"  =
 
   TOPIC GTFS =
 
+    /** Haltestellen
+     */
     CLASS stop =
       stop_id : MANDATORY TEXT*255;
       stop_name : MANDATORY TEXT*1024;
@@ -15,6 +17,31 @@ VERSION "2018-01-26"  =
       parent_station : TEXT*255;
       location : MANDATORY GeometryCHLV95_V1.Coord2;
     END stop;
+
+    /** Haltestellen-Abfahrten
+     */
+    CLASS stop_time =
+      arrival_time : MANDATORY INTERLIS.XMLTime;
+      departure_time : MANDATORY INTERLIS.XMLTime;
+      stop_sequence : 0 .. 999999999999;
+      pickup_type : (
+        regularly_scheduled_pickup,
+        no_pickup_available,
+        must_phone_agency_to_arrange_pickup,
+        must_coordinate_with_driver_to_arrang_pickup
+      );
+      drop_off_type : (
+        regularly_scheduled_drop_off,
+        no_drop_off_available,
+        must_phone_agency_to_arrange_drop_off,
+        must_coordinate_with_driver_to_arrange_drop_off
+      );
+    END stop_time;
+
+    ASSOCIATION stop_time_stop =
+      stop_time -- {1..*} stop_time;
+      stop -- {1} stop;
+    END stop_time_stop;
 
   END GTFS;
 
