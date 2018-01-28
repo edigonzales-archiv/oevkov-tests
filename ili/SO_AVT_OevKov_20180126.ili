@@ -23,7 +23,7 @@ VERSION "2018-01-26"  =
     CLASS stop_time =
       arrival_time : MANDATORY INTERLIS.XMLTime;
       departure_time : MANDATORY INTERLIS.XMLTime;
-      stop_sequence : 0 .. 999999999999;
+      stop_sequence : MANDATORY 0 .. 999999999999;
       pickup_type : (
         regularly_scheduled_pickup,
         no_pickup_available,
@@ -39,8 +39,8 @@ VERSION "2018-01-26"  =
     END stop_time;
 
     ASSOCIATION stop_time_stop =
-      stop_time -- {1..*} stop_time;
-      stop -- {1} stop;
+      r_stop_time -- {1..*} stop_time;
+      r_stop -- {1} stop;
     END stop_time_stop;
 
   END GTFS;
