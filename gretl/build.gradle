@@ -15,7 +15,7 @@ task createNewProject(type: Ili2pgImportSchema) {
     database = [targetDbUrl, targetDbUser, targetDbPass]
     models = "SO_AVT_OekKov_20180126"
     modeldir = "http://models.geo.admin.ch;../ili/" 
-    dbschema = "avt_oevkov_test_1"
+    dbschema = "avt_oevkov_test"
     nameByTopic = true
     createFk = true
     createFkIdx = true

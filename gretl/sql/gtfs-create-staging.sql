@@ -1,4 +1,4 @@
-/*
+
 CREATE TABLE ${schema_name}.gtfs_staging_stop (
 	stop_id varchar(255) NOT NULL,
 	stop_name varchar(1024) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE ${schema_name}.gtfs_staging_stop (
 WITH (
 	OIDS=FALSE
 );
-*/
+
 
 CREATE TABLE ${schema_name}.gtfs_staging_stop_time (
 	trip_id varchar(255) NOT NULL,
